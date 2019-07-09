@@ -11,18 +11,18 @@ class LoginPage {
         this.submitButton = '.login-btn';
     }
 
-    login(username, password) {
-        this._setCredentials(username, password);
+    login({email, password}) {
+        this._setCredentials(email, password);
         return new InboxPage();
     }
 
-    loginIncorrect(username, password) {
-        this._setCredentials(username, password);
+    loginIncorrect(email, password) {
+        this._setCredentials(email, password);
         return this;
     }
 
-    _setCredentials(username, password) {
-        cy.get(this.usernameField).as('User Name Field').type(username);
+    _setCredentials(email, password) {
+        cy.get(this.usernameField).as('User Name Field').type(email);
         cy.get(this.passwordField).as('Password Field').type(password);
         cy.get(this.submitButton).as('Submit Button').click();
     }

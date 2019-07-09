@@ -1,1 +1,6 @@
-{}
+{
+    "env": {
+        "baseUrl": "https://dev-utarel.com/",
+        "baseAPIUrl": "https://api.dev-utarel.com"
+    }
+}

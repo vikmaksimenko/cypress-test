@@ -1,0 +1,20 @@
+{
+  "name": "cypresstest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ivnat97/cypress-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ivnat97/cypress-test#readme"
+}
