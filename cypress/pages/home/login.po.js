@@ -1,4 +1,4 @@
-import InboxPage from './inbox.po';
+import InboxPage from '../createTasks/inbox.po';
 
 class LoginPage {
     usernameField;

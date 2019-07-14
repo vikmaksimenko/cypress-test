@@ -1,6 +1,8 @@
 {
     "env": {
-        "baseUrl": "https://dev-utarel.com/",
+        "baseDevUrl": "https://dev-utarel.com/",
+        "baseAppDevUrl": "https://app.dev-utarel.com/",
+        "baseProdUrl": "https://utarel.com/",
         "baseAPIUrl": "https://api.dev-utarel.com"
     }
 }

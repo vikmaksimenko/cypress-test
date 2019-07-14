@@ -1,4 +1,4 @@
-import HomePage from './../../pages/home.po';
+import HomePage from '../../pages/home/home.po';
 
 describe("Login", function() {
     
@@ -9,7 +9,7 @@ describe("Login", function() {
     describe("Login to Utarel", function() {
 
         beforeEach(function() {
-            cy.visit(Cypress.env('baseUrl'), {
+            cy.visit(Cypress.env('baseDevUrl'), {
                 auth: this.users.serverAuth
             });  
         })
