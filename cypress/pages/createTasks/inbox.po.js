@@ -6,7 +6,7 @@ class InboxPage extends BasePage {
     pencilIcon;
 
     constructor() {
-        super()
+        super();
         this.taskNameField = "#task-name-input";
         this.addButton = "button[type='submit']";
         this.pencilIcon = ".fa-pencil";

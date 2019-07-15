@@ -1,3 +1,4 @@
+
 Cypress.Commands.add('login', (user) => {
     cy.request({
         method: 'POST',
@@ -8,5 +9,8 @@ Cypress.Commands.add('login', (user) => {
         body: user
     }).then(resp => {
         cy.setCookie("access_token", resp.body.access_token);
+        Cypress.Cookies.defaults({
+            whitelist: "access_token"
+        })
     })
 })

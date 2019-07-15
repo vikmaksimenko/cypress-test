@@ -1,40 +1,42 @@
 import InboxPage from '../../pages/createTasks/inbox.po';
 import NavigationBar from '../../pages/common/navbar';
 
+let taskName;
+let inboxPage;
+
+
+
 describe("Inbox tab", function() {
     
     before(function() {
-        cy.fixture("../fixtures/users.json").as("users");
+        cy.fixture("../fixtures/users.json").as("users").then((users) => {
+            cy.login(users.mainUser);
+            cy.visit(Cypress.env('baseAppDevUrl'), {
+                auth: users.serverAuth
+            });      
+        })      
     })
 
-    describe("Task management", function() {
+    describe("CRUD for task", function() {
 
         beforeEach(function() {
-            cy.login(this.users.mainUser).then(() => {
-                cy.visit(Cypress.env('baseAppDevUrl'), {
-                    auth: this.users.serverAuth
-                });
-            })
+            inboxPage = new NavigationBar().openInbox();
         })
         
         it("should create new task", function() {
-            let nav = new NavigationBar();
-            let taskName = "Task_" + Date.now();
+            taskName = "Task_" + Date.now();
 
-            nav.openInbox()
-                .addTask(taskName);
+            inboxPage.addTask(taskName);
             cy.contains(taskName).should('be.visible');
         })
 
-        it("should open edit task modal", function() {
-            let nav = new NavigationBar();
-            let taskName = "Task_" + Date.now();
-
-            nav.openInbox()
-                .addTask(taskName)
+        it("should edit task name", function() {
+            inboxPage.addTask(taskName)
                 .openEditTaskModal(taskName);
         })
     })
 
-    
+    describe("Move Task to Project", function() {
+
+    })
 })
