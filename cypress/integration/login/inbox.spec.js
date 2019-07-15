@@ -4,8 +4,6 @@ import NavigationBar from '../../pages/common/navbar';
 let taskName;
 let inboxPage;
 
-
-
 describe("Inbox tab", function() {
     
     before(function() {

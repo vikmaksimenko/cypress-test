@@ -1,5 +1,7 @@
 import HomePage from '../../pages/home/home.po';
 
+let homePage;
+
 describe("Login", function() {
     
     before(function() {
@@ -12,17 +14,16 @@ describe("Login", function() {
             cy.visit(Cypress.env('baseDevUrl'), {
                 auth: this.users.serverAuth
             });  
+            homePage = new HomePage();
         })
 
         it("should sucessfully login", function() {
-            const homePage = new HomePage();
             const inbox = homePage.goToSignInPage()
                 .login(this.users.mainUser);
             cy.get(inbox.pageTitle).should('be.visible');
         })
 
         it("should show an error for invalid credentials", function() {
-            const homePage = new HomePage();
             homePage.goToSignInPage()
                 .login(this.users.ivalidUser);
             cy.contains('Please check your email/password and try again')
