@@ -5,7 +5,7 @@ class HomePage {
 
     constructor() {
         this.signInButton = `a[href='/login']`;
-        this.signUpButton = `href='/signup'`;
+        this.signUpButton = `a[href='/signup]'`;
     }
 
     goToSignInPage() {
@@ -14,7 +14,7 @@ class HomePage {
     }
 
     goToSignUpPage() {
-        cy.get(this.signUpButton).as('Sign Up Button'),click();
+        cy.get(this.signUpButton).as('Sign Up Button').click();
         
     }
 }
